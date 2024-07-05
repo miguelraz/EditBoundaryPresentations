@@ -1,6 +1,6 @@
 ---
 marp: false
-title: editboundary_enc2023
+title: editboundary_juliacon2024
 paginate: true
 theme: gaia
 math: mathjax
@@ -22,21 +22,20 @@ backgroundColor: #fff
 <!-- _class: lead -->
 
 
-### **A robust method for polygonal approximation by line simplification and smoothing**
+### **EditBoundary.jl - A Quest to Revive Structured Quad Meshes**
 
 by
 
-##### <font color="blue">Iván Méndez Cruz</font>
+##### <font color="blue">Miguel Raz Guzmán Macedo</font>
 
 ##### Pablo Barrera Sánchez
 
-##### Miguel Raz Guzmán Macedo
+##### Iván Méndez Cruz
 
 #### <font color="blue">UNAM</font>
 
-## **ENC 2023** ![width:200px](./images/logo-SMCC-ENC.jpg)
+## **JuliaCon 2024 Eindhoven, Netherlands** ![width:200px](./images/logo-SMCC-ENC.jpg)
 
-#### JuliaCon 2024 Eindhoven, Netherlands
 
 ---
 
