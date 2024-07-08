@@ -34,7 +34,7 @@ by
 
 #### <font color="blue">UNAM</font>
 
-## **JuliaCon 2024 Eindhoven, Netherlands** ![width:200px](./images/logo-SMCC-ENC.jpg)
+![width:200px](https://uploads.tickettailor.com/c_limit,h_400,q_85,w_720/v1/production/userfiles/sjbcir04lluppmbmftwj.png?_a=BAAAV6DQ)
 
 
 ---
@@ -145,8 +145,10 @@ Approximate a <font color="blue">polygonal contour</font> by a <font color="red"
 
 ###  **Edit Boundary.jl**
 
-- A module for polygonal approximation of 2D contours
-- Coded in  <font color="purple">**Julia**</font> [[1],[3]](./slides_enc2023.html#23)
+- A module for polygonal approximation of 2D contours [[0]](./slides_juliacon2024.html#23)
+
+    Our paper: [A Robust Method for Polygonal Approximation by Line Simplification and Smoothing](https://ieeexplore.ieee.org/document/10508682)
+- Coded in  <font color="purple">**Julia**</font> [[1],[3]](./slides_juliacon2024.html#23)
 - Part of the mesher <font color="green">UNAMalla 6</font>
 - <font color="red">See Demo in action!</font>
     
@@ -173,7 +175,7 @@ Approximate a <font color="blue">polygonal contour</font> by a <font color="red"
 <div class="columns">
 <div>
 
-**Older versions of EditBoundary** [[2],[6],[8]](./slides_enc2023.html#23)
+**Older versions of EditBoundary** [[2],[6],[8]](./slides_juliacon2024.html#23)
 
 - Matlab (2012) <font color="green">
 - UNAMalla</font> 5 (2014)
@@ -187,7 +189,7 @@ Approximate a <font color="blue">polygonal contour</font> by a <font color="red"
 <div>
 
 **Before:**
-- Simplification based on Pavlidi's collinearity test [[5]](./slides_enc2023.html#23) and Ray's dominant point detection [[7]](./slides_enc2023.html#23) 
+- Simplification based on Pavlidi's collinearity test [[5]](./slides_juliacon2024.html#23) and Ray's dominant point detection [[7]](./slides_juliacon2024.html#23) 
 - Smoothing by conic and tension splines
 
 **After:**
@@ -287,7 +289,7 @@ $$a_i=\text{area}(T_i)$$
 
 ###  **Area method**
 
-It is a sequential point elimination, also known as **Visvalingam-Whyatt algorithm** [[10]](./slides_enc2023.html#24) in Cartography.
+It is a sequential point elimination, also known as **Visvalingam-Whyatt algorithm** [[10]](./slides_juliacon2024.html#24) in Cartography.
 
 
 **Idea:** At each step we find the triangle <font color="red">$T_j$</font> with the smallest area <font color="red">$a_j$</font> and delete the corresponding
@@ -355,7 +357,7 @@ Note that as the threshold increases, more vertices are removed.
 **Idea:**  Replace the areas of the triangles in the area method by the radii products:
 $$\color{blue}2\cdot\text{circumradius}\times\text{inradius}$$
 
-**Why?** By *Blundon's Inequality* [[11]](./slides_enc2023.html#23) every triangle with circumradius $R$, inradius $r$ and area $a$ satisfies:
+**Why?** By *Blundon's Inequality* [[11]](./slides_juliacon2024.html#23) every triangle with circumradius $R$, inradius $r$ and area $a$ satisfies:
 $$a\leq 2Rr + 1.2r^2.$$
 Non-obtuse triangles also satisfy
 $$a\geq 2Rr + r^2$$
@@ -571,7 +573,7 @@ We smooth the polygon by moving its vertices.
 
 **How to move the vertices?** 
 
-**Montanari's idea** [[3]](./slides_enc2023.html#21):
+**Montanari's idea** [[3]](./slides_juliacon2024.html#21):
 Given a polygon $\color{blue}v_1,\dots,v_n$ with perimeter $\rho$, and a threshold $\color{red}\delta$, find the minimum perimeter polygon $\color{green}u_1,\dots,u_n$ s.t.
 $$\|{\color{green}u_i}-{\color{blue}v_i}\|_{\infty}
  \leq \rho\cdot{\color{red}\delta}, \quad i=1,\dots,n$$
@@ -649,7 +651,7 @@ Our method can get shape preserving polygons as we have tested by using *Editbou
 ### **Future work** 
 - Simplify contours of a region decomposition.
 - Improvements for *Editboundary.jl*
-    - performance
+    - batching mode
     - handle self-intersections
     - support for geospatial data format.
 
@@ -672,9 +674,11 @@ Our method can get shape preserving polygons as we have tested by using *Editbou
 
 UNAMalla homepage: <font color="purple">tikhonov.fciencias.unam.mx</font>
 
-Github: **EditBoundary.jl**
+Github: [**EditBoundary.jl**](https://github.com/miguelraz/EditBoundary.jl)
 
-e-mail: <font color="blue">vanmc@ciencias.unam.mx</font>
+e-mail:
+- <font color="green">miguelraz@gmail.com</font>
+- <font color="blue">vanmc@ciencias.unam.mx</font>
 
 ![bg right fit opacity:0.8](images/golfo_barco.svg)
 
@@ -690,15 +694,16 @@ e-mail: <font color="blue">vanmc@ciencias.unam.mx</font>
 
 ### **References**
 
-1. [Bezanson, J et al.](./slides_enc2023.html#7) (2017) **Julia: a fresh approach to numerical computing.** *SIAM Review 59(1), 65-98*. <font color="purple">doi.org/10.1137/141000671</font>
-2. [Carreón, C.](./slides_enc2023.html#8) (2008) **Un módulo para el tratamiento de contornos en el sistema UNAMALLA.** *Bachelor Thesis (spanish), UNAM, Mexico.* 
-3. [Danisch & Krumbiegel](./slides_enc2023.html#7) (2021) **Makie.jl: Flexible high-performance data visualization for Julia.** *JOSS, 6(65), 3349.* <font color="purple">doi.org/10.21105/joss.03349</font>
-4. [Montanari, U.](./slides_enc2023.html#18) (1979) **A note on minimal length polynomial approximation to a digitized contour.** *Commun. ACM 13(1), 41-47.*
-5. [Pavlidis, T.](./slides_enc2023.html#8) (1982) **Algorithms for graphics and image processing.** Springer
-6. [Ramírez, L. A.](./slides_enc2023.html#8) (2011) **Un módulo para el suavizamiento de contornos usando spline en tensión para el sistema Editboundary.** *Bachelor Thesis (spanish), UNAM, Mexico.*
-7. [Ray & Ray](./slides_enc2023.html#8) (2013) **Polygonal approximation and scale-space analysis of closed digital curves.**
+0. [Barrera P., Méndez I., Guzmán M.R.](./slides_juliacon2024.html#7) (2023) **A Robust Method for Polygonal Approximation by Line Simplification and Smoothing.** *Mexican International Conference on Computer Science*. <font color="purple">doi: 10.1109/ENC60556.2023.10508682.</font>
+1. [Bezanson, J et al.](./slides_juliacon2024.html#7) (2017) **Julia: a fresh approach to numerical computing.** *SIAM Review 59(1), 65-98*. <font color="purple">doi.org/10.1137/141000671</font>
+2. [Carreón, C.](./slides_juliacon2024.html#8) (2008) **Un módulo para el tratamiento de contornos en el sistema UNAMALLA.** *Bachelor Thesis (spanish), UNAM, Mexico.* 
+3. [Danisch & Krumbiegel](./slides_juliacon2024.html#7) (2021) **Makie.jl: Flexible high-performance data visualization for Julia.** *JOSS, 6(65), 3349.* <font color="purple">doi.org/10.21105/joss.03349</font>
+4. [Montanari, U.](./slides_juliacon2024.html#18) (1979) **A note on minimal length polynomial approximation to a digitized contour.** *Commun. ACM 13(1), 41-47.*
+5. [Pavlidis, T.](./slides_juliacon2024.html#8) (1982) **Algorithms for graphics and image processing.** Springer
+6. [Ramírez, L. A.](./slides_juliacon2024.html#8) (2011) **Un módulo para el suavizamiento de contornos usando spline en tensión para el sistema Editboundary.** *Bachelor Thesis (spanish), UNAM, Mexico.*
+7. [Ray & Ray](./slides_juliacon2024.html#8) (2013) **Polygonal approximation and scale-space analysis of closed digital curves.**
 Apple Academic Press, Inc.
-8. [Rivera, A.](./slides_enc2023.html#8) (1999) **Un punto de vista sobre las cónicas y su uso en el suavizamiento de polígonos.** *Bachelor Thesis (spanish), UNAM, Mexico.*
+8. [Rivera, A.](./slides_juliacon2024.html#8) (1999) **Un punto de vista sobre las cónicas y su uso en el suavizamiento de polígonos.** *Bachelor Thesis (spanish), UNAM, Mexico.*
 
 ---
 
@@ -712,8 +717,8 @@ Apple Academic Press, Inc.
 
 ### **References**
 
-9. [UNAMALLA 4](./slides_enc2023.html#8) <font color="purple">lya.fciencias.unam.mx/unamalla/</font>
-10. [Visvalingam, M., Whyatt, J. D.](./slides_enc2023.html#9) (1993) **Line generalisation by repeated elimination of points.** *Cartographic Journal, 30(1), 46-51.*
-11. [Wu, S. H., Chu, Y. M.](./slides_enc2023.html#11) (2014) **Geometric interpretation of Blundon's inequality and Ciamberlini's inequality.** *J. Inequal. Appl. 381.*
+9. [UNAMALLA 4](./slides_juliacon2024.html#8) <font color="purple">lya.fciencias.unam.mx/unamalla/</font>
+10. [Visvalingam, M., Whyatt, J. D.](./slides_juliacon2024.html#9) (1993) **Line generalisation by repeated elimination of points.** *Cartographic Journal, 30(1), 46-51.*
+11. [Wu, S. H., Chu, Y. M.](./slides_juliacon2024.html#11) (2014) **Geometric interpretation of Blundon's inequality and Ciamberlini's inequality.** *J. Inequal. Appl. 381.*
 
 
